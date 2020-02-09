@@ -69,7 +69,11 @@ NOTE :  advertise ip should be consul IP (where cosul is installed machine)
 Create docker-machine swarm manager :
 
 NOTE : For swarm manager we need token, to generate certificates and this token will get by running the following command.
-       Command : docker run -d swarm create.
+       Command : 
+       
+       docker run -d swarm create.
+       
+#### create the swarm-manager machine using token ###
 
 	docker-machine create -d amazonec2 \
 	--amazonec2-region us-east-1 \
