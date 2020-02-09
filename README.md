@@ -51,7 +51,7 @@
 
 	aws configure
 
-give aws accessID,secretkey,region,output
+Give aws accessID,secretkey,region,output type
 
 
 #### Create docker machine using aws ec2 driver : ####
@@ -121,6 +121,7 @@ docker swarm container should be up and running with 3376 port
 	   docker-machine ssh node01
    
    stop the running join docker container
+   
 	   sudo docker stop $(docker ps -q)
    
 Note : Change below command advertise IP address with node01 IP 
@@ -137,11 +138,13 @@ docker swarm container should be up and running with 2376 port
 
 #### Now test the cluster: ####
 
-Login to base-machine
-switch to root user 
+Login to base-machine and switch to root user 
+
 	mkdir -p ~/.docker
 	cd ~/.docker
+
 copy the swarm-manager certificates to .docker folder.
+
 	cp -r /home/ubuntu/.docker/machine/machines/swarm-manager/*.pem* ~/.docker/
 
 export the env for connecting the swarm-manager 
