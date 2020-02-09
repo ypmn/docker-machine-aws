@@ -48,7 +48,6 @@
 	docker -v
 
 #### Configure the aws credentials : ####
------------------------------
 
 	aws configure
 
@@ -56,7 +55,7 @@ give aws accessID,secretkey,region,output
 
 
 #### Create docker machine using aws ec2 driver : ####
--------------------------------------------
+
 NOTE :  Base-machine is where awcli, docker-machine and docker-client has been installed.
 
 Intially we need to run the  ' consul ' image to discovery process :
@@ -101,8 +100,8 @@ Note : For swarm manager we need token, to generate certificates and this token 
 
 1. we need to login to swarm manager and stop the running manager docker container and join docker container .
 
-	docker-machine ssh swarm-manager
-	 sudo docker stop $(docker ps -q) 
+		docker-machine ssh swarm-manager
+		 sudo docker stop $(docker ps -q) 
 	  
 2. Create a new docker container with consul discovery method 
   
@@ -122,7 +121,7 @@ docker swarm container should be up and running with 3376 port
 	   docker-machine ssh node01
    
    stop the running join docker container
-   sudo docker stop $(docker ps -q)
+	   sudo docker stop $(docker ps -q)
    
 Note : Change below command advertise IP address with node01 IP 
        Change consul IP address with consul server IP
@@ -135,7 +134,6 @@ docker swarm container should be up and running with 2376 port
 
 ## The cluster creation has been done ##
 
-============================================================================================
 
 #### Now test the cluster: ####
 
