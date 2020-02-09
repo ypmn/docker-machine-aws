@@ -51,7 +51,7 @@
 
 	aws configure
 
-Give aws accessID,secretkey,region,output type
+Give aws accessID, secretkey, region, output type
 
 
 #### Create docker machine using aws ec2 driver : ####
@@ -64,11 +64,11 @@ Run the below command in Base-machine
 
 	docker run -d -p 8500:8500 progrium/consul -server -bootstrap -advertise=34.205.255.243 -ui-dir /ui
 
-Note :  advertise ip should be consul IP (where cosul is installed machine)
+NOTE :  advertise ip should be consul IP (where cosul is installed machine)
 
 Create docker-machine swarm manager :
 
-Note : For swarm manager we need token, to generate certificates and this token will get by running the following command.
+NOTE : For swarm manager we need token, to generate certificates and this token will get by running the following command.
        Command : docker run -d swarm create.
 
 	docker-machine create -d amazonec2 \
@@ -105,7 +105,7 @@ Note : For swarm manager we need token, to generate certificates and this token 
 	  
 2. Create a new docker container with consul discovery method 
   
-Note : Change the advertise IP address with swarm-manager IP.
+NOTE : Change the advertise IP address with swarm-manager IP.
        Change the consul IP address with consul server IP.  
 
 	sudo docker run -d -p 3376:3376 -v /etc/docker/:/certs:ro swarm manage --tlsverify --tlscacert=/certs/ca.pem --tlscert=/certs/server.pem --tlskey=/certs/server-key.pem -H tcp://0.0.0.0:3376 --strategy spread --advertise 34.200.230.45:3376 consul://34.205.255.243:8500
