@@ -62,7 +62,7 @@ Intially we need to run the  ' consul ' image to discovery process :
 
 Run the below command in Base-machine
 
-	docker run -d -p 8500:8500 progrium/consul -server -bootstrap -advertise=34.205.255.243 -ui-dir /ui
+	docker run -d -p 8500:8500 ypmnprime/consul:latest -server -bootstrap -advertise=34.205.255.243 -ui-dir /ui
 
 NOTE :  advertise ip should be consul IP (where cosul is installed machine)
 
