@@ -126,7 +126,7 @@ docker swarm container should be up and running with 3376 port
    
    stop the running join docker container
    
-	   sudo docker stop $(docker ps -q)
+	   sudo docker stop $(sudo docker ps -q)
    
 Note : Change below command advertise IP address with node01 IP 
        Change consul IP address with consul server IP
