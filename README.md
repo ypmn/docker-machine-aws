@@ -105,7 +105,7 @@ NOTE : For swarm manager we need token, to generate certificates and this token 
 1. we need to login to swarm manager and stop the running manager docker container and join docker container .
 
 		docker-machine ssh swarm-manager
-		 sudo docker stop $(docker ps -q) 
+		 sudo docker stop $(sudo docker ps -q) 
 	  
 2. Create a new docker container with consul discovery method 
   
